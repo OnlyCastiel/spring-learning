@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.user</groupId>
+    <artifactId>user-springboot</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+    <name></name>
+
+    <!--springboot parent +springboot start-->
+    <!--springboot 项目必须要依赖parent标签，该标签中引入了大量默认的依赖坐标-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.1</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+        </dependency>
+    </dependencies>
+
+
+
+    <!--自定义springboot启动类-->
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>com.mfqspringboot</groupId>-->
+<!--            <artifactId>mfq-SpringBoot-web-start</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.apache.tomcat.embed</groupId>-->
+<!--                    <artifactId>tomcat-embed-core</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash;显示引入jetty依赖&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.eclipse.jetty</groupId>-->
+<!--            <artifactId>jetty-server</artifactId>-->
+<!--            <version>9.4.43.v20210629</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
+    <build>
+        <plugins>
+            <!--配套的maven插件-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
