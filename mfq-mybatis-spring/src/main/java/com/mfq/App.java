@@ -1,6 +1,8 @@
 package com.mfq;
 
+import com.mfq.entity.User;
 import com.mfq.user.UserService;
+import mybatis.spring.MybatisFactoryBean;
 import mybatis.spring.MybatisMapperScan;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -27,17 +29,17 @@ public class App
         UserService bean = applicationContext.getBean(UserService.class);
         bean.test();
 
-//        Object obj1 = applicationContext.getBean("mybatisFactoryBean");
-//        Object obj2 = applicationContext.getBean("&mybatisFactoryBean");
-//        //Object obj3 = applicationContext.getBean("user");
-//        //Object obj4 = applicationContext.getBean(User.class);
-//        Object obj5 = applicationContext.getBean(MybatisFactoryBean.class);
-//
-//        System.out.println(obj1);
-//        System.out.println(obj2);
-//        //System.out.println(obj3);
-//        //System.out.println(obj4);
-//        System.out.println(obj5);
+        Object obj1 = applicationContext.getBean("mybatisFactoryBean");
+        Object obj2 = applicationContext.getBean("&mybatisFactoryBean");
+        Object obj3 = applicationContext.getBean("user");
+        Object obj4 = applicationContext.getBean(User.class);
+        Object obj5 = applicationContext.getBean(MybatisFactoryBean.class);
+
+        System.out.println(obj1);
+        System.out.println(obj2);
+        //System.out.println(obj3);
+        //System.out.println(obj4);
+        System.out.println(obj5);
 
 
     }

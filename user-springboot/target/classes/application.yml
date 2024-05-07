@@ -1,7 +1,0 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /mfq
-spring:
-  application:
-    name: mfq
