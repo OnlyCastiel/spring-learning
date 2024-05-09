@@ -4,7 +4,9 @@ import com.mfq.entity.User;
 import com.mfq.user.UserService;
 import mybatis.spring.MybatisFactoryBean;
 import mybatis.spring.MybatisMapperScan;
+import org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -15,6 +17,10 @@ import org.springframework.context.annotation.ComponentScan;
 @MybatisMapperScan("com.mfq.mapper")
 public class App
 {
+
+
+
+
     public static void main( String[] args )
     {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
