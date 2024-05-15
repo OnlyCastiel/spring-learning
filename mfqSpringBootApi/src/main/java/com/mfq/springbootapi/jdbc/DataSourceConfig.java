@@ -26,7 +26,7 @@ public class DataSourceConfig {
 
     public static void main(String[] args) {
 
-        String driverClassName = "com.mysql.cj.jdbc.Driver";
+        String driverClassName = "com.mysql.cj.jdbc.Driver";//jdbc4.0之后不需要
         String url = "jdbc:mysql://localhost:3306/cloud_crm?useUnicode=true&characterEncoding=UTF8&useSSL=false";
         String userName = "root";
         String password = "123456";
@@ -38,7 +38,7 @@ public class DataSourceConfig {
             //当前线程加载器本身为应用加载器appClassLoader ,替换为父加载器ExtClassLoader后，将执行报错
             Thread.currentThread().setContextClassLoader(DataSourceConfig.class.getClassLoader().getParent());
 
-            //Class.forName使用的是当前调用类的类加载器，默认机制--非线程上下文中的类加载器
+            //注册 JDBC 驱动; Class.forName使用的是当前调用类的类加载器，默认机制--非线程上下文中的类加载器,jdbc4.0之后不需要显示调用
             Class.forName(driverClassName);
 
             //读取用户包以及用户lib包下的 \META-INF\services\java.sql.Driver 文件，其中定义了对应的dirver类
